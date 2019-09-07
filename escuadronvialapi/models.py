@@ -11,7 +11,7 @@ class Categoria(models.Model):
 class Pregunta(models.Model):
     pregunta = models.CharField(max_length=500)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    estado = models.BooleanField(default=False)
+    publicada = models.BooleanField(default=False)
 
     def __str__(self):
         return self.pregunta
