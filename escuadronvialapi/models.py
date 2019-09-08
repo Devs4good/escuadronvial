@@ -50,9 +50,13 @@ class Sesion(models.Model):
 
 
 class PreguntaUsuario(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=100)
     pregunta = models.CharField(max_length=500)
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    respuesta = models.CharField(max_length=500)
 
     def __str__(self):
-        return self.pregunta     
+        return "{nombre}: {pregunta} - {respuesta}".format(
+            nombre=self.nombre,
+            pregunta=self.pregunta,
+            respuesta=self.respuesta
+        )

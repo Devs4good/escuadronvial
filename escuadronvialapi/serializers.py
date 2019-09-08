@@ -30,7 +30,7 @@ class PreguntaSerializer(serializers.HyperlinkedModelSerializer):
 class PreguntaUsuarioSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = PreguntaUsuario
-		fields = ["usuario", "pregunta", "categoria"]
+		fields = ["nombre", "pregunta", "respuesta"]
 
 
 class RankingSerializer(serializers.HyperlinkedModelSerializer):
