@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from .models import Categoria, Sesion
-from .serializers import CategoriaSerializer, SesionSerializer
+from .models import Categoria, Sesion, Respuesta
+from .serializers import CategoriaSerializer, SesionSerializer, RespuestaSerializer
 
 
 class CategoriaViewSet(viewsets.ModelViewSet):
@@ -12,3 +12,7 @@ class CategoriaViewSet(viewsets.ModelViewSet):
 class SesionViewSet(viewsets.ModelViewSet):
     queryset = Sesion.objects.all()
     serializer_class = SesionSerializer
+
+class RespuestaViewSet(viewsets.ModelViewSet):
+    queryset = Respuesta.objects.all()
+    serializer_class = RespuestaSerializer

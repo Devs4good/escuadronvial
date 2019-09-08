@@ -22,6 +22,7 @@ from escuadronvialapi import views
 router = routers.DefaultRouter()
 router.register(r"categorias", views.CategoriaViewSet)
 router.register(r"sesiones", views.SesionViewSet)
+router.register(r"respuestas", views.RespuestaViewSet)
 
 
 urlpatterns = [
