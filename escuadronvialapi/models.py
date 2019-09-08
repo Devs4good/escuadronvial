@@ -42,3 +42,9 @@ class Ranking(models.Model):
 
     def __str__(self):
         return self.usuario
+
+
+class Sesion(models.Model):
+    nombre = models.CharField(max_length=50)
+    edad = models.IntegerField(default=0)
+
