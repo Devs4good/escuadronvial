@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["rocky-ocean-09170.herokuapp.com", "*"]
 
+# CORS
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
