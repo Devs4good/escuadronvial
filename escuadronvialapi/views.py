@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from .models import Categoria, Sesion, Respuesta, Ranking
-from .serializers import CategoriaSerializer, SesionSerializer, RespuestaSerializer, RankingSerializer
+from .models import Categoria, Sesion, Respuesta, Ranking, PreguntaUsuario
+from .serializers import CategoriaSerializer, SesionSerializer, RespuestaSerializer, RankingSerializer, PreguntaUsuarioSerializer
 
 
 class CategoriaViewSet(viewsets.ModelViewSet):
@@ -20,3 +20,7 @@ class RespuestaViewSet(viewsets.ModelViewSet):
 class RankingViewSet(viewsets.ModelViewSet):
     queryset = Ranking.objects.all()
     serializer_class = RankingSerializer
+
+class PreguntaUsuarioViewSet(viewsets.ModelViewSet):
+	queryset = Ranking.objects.all()
+	serializer_class = PreguntaUsuarioSerializer    

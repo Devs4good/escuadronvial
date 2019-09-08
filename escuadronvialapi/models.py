@@ -50,7 +50,7 @@ class Sesion(models.Model):
 
 
 class PreguntaUsuario(models.Model):
-    nombre = models.CharField(max_length=50)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     pregunta = models.CharField(max_length=500)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
