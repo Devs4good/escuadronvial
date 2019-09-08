@@ -48,3 +48,11 @@ class Sesion(models.Model):
     nombre = models.CharField(max_length=50)
     edad = models.IntegerField(default=0)
 
+
+class PreguntaUsuario(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    pregunta = models.CharField(max_length=500)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.pregunta     

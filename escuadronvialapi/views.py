@@ -2,8 +2,8 @@ from django.http import Http404
 from rest_framework.response import Response
 from rest_framework import viewsets, views
 
-from .models import Categoria, Pregunta, Sesion, Respuesta, Ranking
-from .serializers import CategoriaSerializer, PreguntaSerializer, SesionSerializer, RespuestaSerializer, RankingSerializer
+from .models import Categoria, Pregunta, Sesion, Respuesta, Ranking, PreguntaUsuario
+from .serializers import CategoriaSerializer, PreguntaSerializer, SesionSerializer, RespuestaSerializer, RankingSerializer, PreguntaUsuarioSerializer
 
 
 class CategoriaViewSet(viewsets.ModelViewSet):
@@ -25,6 +25,10 @@ class RankingViewSet(viewsets.ModelViewSet):
     queryset = Ranking.objects.all()
     serializer_class = RankingSerializer
 
+class PreguntaUsuarioViewSet(viewsets.ModelViewSet):
+	queryset = Ranking.objects.all()
+	serializer_class = PreguntaUsuarioSerializer 
+
 
 class PreguntaViewSet(viewsets.ModelViewSet):
     queryset = Pregunta.objects.all()
@@ -43,4 +47,4 @@ class PreguntasList(views.APIView):
         }
         serializer = PreguntaSerializer(preguntas, many=True, context=serializer_context)
 
-        return Response(serializer.data)
+        return Response(serializer.data)   

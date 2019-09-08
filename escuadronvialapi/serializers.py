@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Categoria, Pregunta, Sesion, Respuesta, Ranking
+from .models import Categoria, Pregunta, Sesion, Respuesta, Ranking, PreguntaUsuario
 
 
 class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,7 +27,13 @@ class PreguntaSerializer(serializers.HyperlinkedModelSerializer):
         fields = ["url", "id", "pregunta"]
 
 
+class PreguntaUsuarioSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = PreguntaUsuario
+		fields = ["usuario", "pregunta", "categoria"]
+
+
 class RankingSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Ranking
-        fields = ["usuario", "categoria", "puntaje"]
+	class Meta:
+		model = Ranking
+		fields = ["usuario", "categoria", "puntaje"]
