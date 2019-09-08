@@ -26,20 +26,21 @@ class RankingViewSet(viewsets.ModelViewSet):
     serializer_class = RankingSerializer
 
 
+class PreguntaViewSet(viewsets.ModelViewSet):
+    queryset = Pregunta.objects.all()
+    serializer_class = PreguntaSerializer
+
+
 class PreguntasList(views.APIView):
     def get(self, request, cat_id):
-        categoria = self.__get_categoria(cat_id)
         preguntas = Pregunta.objects.filter(categoria_id=cat_id)
 
         print()
         print(preguntas)
         print()
-        serializer = PreguntaSerializer(preguntas, many=True)
+        serializer_context = {
+            'request': request,
+        }
+        serializer = PreguntaSerializer(preguntas, many=True, context=serializer_context)
 
         return Response(serializer.data)
-
-    def __get_categoria(self, categoria_id):
-        try:
-            return Categoria.objects.filter(pk=categoria_id)
-        except Categoria.DoesNotExist:
-            raise Http404

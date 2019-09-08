@@ -6,28 +6,28 @@ from .models import Categoria, Pregunta, Sesion, Respuesta, Ranking
 class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Categoria
-        fields = ["url", "nombre", "id"]
+        fields = ["url", "id", "nombre"]
 
 
 class SesionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Sesion
-        fields = ["url", "nombre", "edad"]
+        fields = ["url", "id", "nombre", "edad"]
 
 
 class RespuestaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Respuesta
-        fields = ["url", "respuesta", "pregunta", "correcta"]
+        fields = ["url", "id", "respuesta", "pregunta", "correcta"]
 
 
 class PreguntaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Pregunta
-        fields = ["url", "pregunta"]
+        fields = ["url", "id", "pregunta"]
+
 
 class RankingSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = Ranking
-		fields = ["usuario", "categoria", "puntaje"]
-
+    class Meta:
+        model = Ranking
+        fields = ["usuario", "categoria", "puntaje"]

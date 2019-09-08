@@ -21,6 +21,7 @@ from escuadronvialapi import views
 
 router = routers.DefaultRouter()
 router.register(r"categorias", views.CategoriaViewSet)
+router.register(r"preguntas", views.PreguntaViewSet)
 router.register(r"sesiones", views.SesionViewSet)
 router.register(r"respuestas", views.RespuestaViewSet)
 router.register(r"ranking", views.RankingViewSet)
@@ -30,5 +31,5 @@ urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path("categorias/<int:cat_id>/preguntas/", views.PreguntasList.as_view())
+    # path("categorias/<int:cat_id>/preguntas/", views.PreguntasList.as_view(), namespace="escuadronvial:pregunta-detail"),
 ]
