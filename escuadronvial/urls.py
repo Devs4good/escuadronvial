@@ -25,6 +25,7 @@ router.register(r"sesiones", views.SesionViewSet)
 
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('', include(router.urls))
 ]

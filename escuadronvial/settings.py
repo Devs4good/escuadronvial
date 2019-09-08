@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["rocky-ocean-09170.herokuapp.com"]
 
 INSTALLED_APPS = [
     'escuadronvialapi.apps.EscuadronvialapiConfig',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
