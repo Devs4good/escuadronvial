@@ -29,5 +29,6 @@ router.register(r"ranking", views.RankingViewSet)
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path("categorias/<int:cat_id>/preguntas/", views.PreguntasList.as_view())
 ]
