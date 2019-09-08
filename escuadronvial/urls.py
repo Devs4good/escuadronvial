@@ -23,6 +23,7 @@ router = routers.DefaultRouter()
 router.register(r"categorias", views.CategoriaViewSet)
 router.register(r"sesiones", views.SesionViewSet)
 router.register(r"respuestas", views.RespuestaViewSet)
+router.register(r"ranking", views.RankingViewSet)
 
 
 urlpatterns = [
