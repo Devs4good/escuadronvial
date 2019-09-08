@@ -41,7 +41,11 @@ class Ranking(models.Model):
     puntaje = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.usuario
+        return "{usuario}: {categoria} - {puntaje}".format(
+            usuario=str(self.usuario),
+            categoria=str(self.categoria),
+            puntaje=self.puntaje
+        )
 
 
 class Sesion(models.Model):
